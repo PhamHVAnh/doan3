@@ -1,0 +1,53 @@
+-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: dongho
+-- ------------------------------------------------------
+-- Server version	8.0.41
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `danhmuc`
+--
+
+DROP TABLE IF EXISTS `danhmuc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `danhmuc` (
+  `maDM` char(36) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `tenDM` varchar(255) NOT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL,
+  PRIMARY KEY (`maDM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `danhmuc`
+--
+
+LOCK TABLES `danhmuc` WRITE;
+/*!40000 ALTER TABLE `danhmuc` DISABLE KEYS */;
+INSERT INTO `danhmuc` VALUES ('2b4e59ad-c3a4-4aed-9551-42533583d496','Đồng hồ khác','2025-06-04 09:15:55','2025-06-04 09:15:55'),('74869d89-0011-45b6-bd3b-df6572fa601e','Đồng hồ nữ','2025-06-04 09:15:42','2025-06-04 09:15:42'),('8442d9b5-333a-486e-8442-c1569f05fc32','Đồng hồ nam','2025-06-04 09:15:34','2025-06-04 09:15:34'),('93645ffe-f4b0-417c-98df-81a45c58e76c','Đồng hồ để bàn','2025-06-05 03:26:46','2025-06-05 03:26:46'),('a9916bf0-a10a-499a-aceb-0fd75598a232','Đồng hồ treo tường','2025-06-05 03:26:35','2025-06-05 03:26:35'),('c5fb561a-0a94-4ad4-84fa-a3c95433bfb4','Đồng hồ đôi','2025-06-04 09:15:47','2025-06-04 09:15:47');
+/*!40000 ALTER TABLE `danhmuc` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-06-20 14:15:56

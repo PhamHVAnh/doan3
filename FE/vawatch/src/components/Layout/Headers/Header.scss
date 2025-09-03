@@ -1,0 +1,194 @@
+.top-bar {
+    background-color: black;
+    color: white;
+  }
+  
+  .logo-img {
+    max-height: 90px;
+    object-fit: contain;
+    
+  }
+  
+  .search-box {
+    background-color: #333;
+    border: none;
+    color: white;
+  
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+  
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  
+    i {
+      color: #ffffff;
+      font-size: 1rem;
+    }
+  }
+  
+  .phone-text {
+    font-size: 12px;
+    text-align: left;
+  }
+  
+  .phone-number {
+    font-size: 18px;
+    color: #f9f9f9;
+  }
+  
+  // Menu styles
+  header {
+    background-color: #816F5E;
+
+  }
+  .navbar {
+    background-color: #816F5E;
+    position: relative;
+    // z-index: 1000;
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+
+  
+    a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      padding: 5px 10px;
+      text-decoration: none;
+  
+      img {
+        background-color: #eee;
+        padding: 5px;
+      }
+    }
+  }
+  
+.subnav {
+  float: left;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 19px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: white;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+  }
+
+  // Hover trực tiếp hoặc hover vào subnav cha
+  
+  .subnavbtn:hover,
+  &:hover .subnavbtn {
+   
+    color: #272424;
+
+    &::after {
+      opacity: 1;
+      transform: scaleX(0.7); // hiệu ứng kẻ ngang
+    }
+  }
+
+  // Hiện content
+  .subnav-content {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: #5a4434a5;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 90;
+    top: 100%;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  &:hover .subnav-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+  
+  .mega-menu {
+    display: flex;
+    background-color: rgba(90, 68, 52, 0.95);
+    padding: 20px;
+    color: white;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .column {
+    flex: 1;
+    margin-right: 20px;
+  
+    h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid white;
+      padding-bottom: 5px;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+  
+      li {
+        margin: 5px 0;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
+  .cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 18px;
+  line-height: 1;
+  transform: translate(50%, -50%);
+}

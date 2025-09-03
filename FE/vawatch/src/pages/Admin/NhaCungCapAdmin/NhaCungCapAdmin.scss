@@ -1,0 +1,132 @@
+.btn-add {
+  background-color: #201c2c;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-add:hover {
+  background-color: #363447;
+  color: white;
+}
+
+/* Tô màu tiêu đề bảng */
+table.table {
+  thead {
+    tr {
+      th {
+        background: linear-gradient(45deg, #201c2c, #4a4861) !important;
+        color: white !important;
+        border-color: #4a4861 !important;
+      }
+    }
+  }
+}
+
+/* Pagination */
+.pagination-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 6px;
+}
+
+.pagination-btn {
+  border: 1px solid #201c2c;
+  background-color: white;
+  color: #201c2c;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #201c2c;
+    color: white;
+  }
+
+  &.active {
+    background-color: #201c2c;
+    color: white;
+    cursor: default;
+  }
+}
+// table in
+.custom-table-bordered {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table-bordered th,
+.custom-table-bordered td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+.custom-table-bordered thead th {
+  background-color: #f8f9fa;
+}
+// 
+
+.search-container {
+  .input-group {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+
+    &:hover, &:focus-within {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-group-text {
+      border: 1px solid #dee2e6;
+      border-right: none;
+      padding: 0.5rem 1rem;
+      
+      i {
+        font-size: 1rem;
+        color: #6c757d;
+      }
+    }
+
+    .form-control {
+      border: 1px solid #dee2e6;
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
+      
+      &:focus {
+        box-shadow: none;
+        border-color: #dee2e6;
+      }
+
+      &::placeholder {
+        color: #adb5bd;
+      }
+    }
+
+    .btn-outline-secondary {
+      border: 1px solid #dee2e6;
+      border-left: none;
+      padding: 0.5rem 1rem;
+      
+      &:hover {
+        background-color: #f8f9fa;
+        color: #dc3545;
+      }
+
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+}

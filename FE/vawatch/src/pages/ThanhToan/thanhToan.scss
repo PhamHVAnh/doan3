@@ -1,0 +1,677 @@
+.aaa img {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 4px;
+  }
+  
+  input.form-control {
+    border-radius: 6px;
+  }
+  .thanh-toan-wrapper {
+  input::placeholder {
+    color: #999;
+  }
+
+  .table th,
+  .table td {
+    vertical-align: middle;
+  }
+}
+
+/* Thiết kế mới cho trang thanh toán */
+.checkout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.checkout-header {
+  margin-bottom: 30px;
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #333;
+  }
+}
+
+/* Các bước thanh toán */
+.checkout-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #e0e0e0;
+      color: #666;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      margin-bottom: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .step-title {
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    &.active {
+      .step-number {
+        background-color: #7c6a56;
+        color: white;
+      }
+
+      .step-title {
+        color: #333;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .step-connector {
+    flex-grow: 0;
+    height: 2px;
+    background-color: #e0e0e0;
+    width: 80px;
+    margin: 0 10px;
+    position: relative;
+    top: -14px;
+    z-index: 0;
+  }
+}
+
+/* Layout chính */
+.checkout-content {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 30px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form thanh toán */
+.checkout-main {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+}
+
+.checkout-form {
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #7c6a56;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(124, 106, 86, 0.2);
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+  }
+}
+
+/* Phương thức thanh toán */
+.payment-method {
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  h5 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .payment-option {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      border-color:#7c6a56;
+      transform: translateY(-2px);
+    }
+
+    &.active {
+      border-color:#7c6a56;
+      background-color: #f5f9ff;
+    }
+
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      
+      &:checked + .payment-label {
+        background-color: #f5f9ff;
+      }
+    }
+
+    .payment-label {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      cursor: pointer;
+      width: 100%;
+      margin: 0;
+
+      &:hover {
+        background-color: #f8f9fa;
+      }
+    }
+
+    .payment-icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      border-radius: 8px;
+      background: #f8f9fa;
+
+      i {
+        font-size: 24px;
+        color:#7c6a56;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    .payment-info {
+      flex: 1;
+
+      .payment-title {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 4px;
+      }
+
+      .payment-desc {
+        color: #666;
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+.payment-details {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+
+  h6 {
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .bank-info {
+    display: flex;
+    gap: 30px;
+
+    .bank-text {
+      flex: 1;
+
+      .bank-detail-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        
+        i {
+          width: 24px;
+          color:#7c6a56;
+          margin-right: 10px;
+        }
+
+        span {
+          flex: 1;
+        }
+      }
+    }
+
+    .bank-qr {
+      text-align: center;
+
+      .qr-code {
+        border: 8px solid white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      p {
+        margin-top: 10px;
+        color: #666;
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+.vnpay-details {
+  .vnpay-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .vnpay-logo {
+      width: 100px;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .vnpay-text {
+      flex: 1;
+
+      p {
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          position: relative;
+          padding-left: 20px;
+          margin-bottom: 8px;
+          color: #666;
+
+          &:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color:#7c6a56;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Xác nhận đơn hàng */
+.order-confirmation {
+  .confirmation-section {
+    margin-bottom: 25px;
+
+    h5 {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .info-card {
+      background-color: #f9f7f5;
+      border-radius: 8px;
+      padding: 15px 20px;
+      border: 1px solid #e6e0d8;
+
+      p {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .terms-section {
+    .terms-container {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+      border: 1px solid #e6e0d8;
+      border-radius: 8px;
+      padding: 15px 20px;
+      background-color: #f9f7f5;
+    }
+
+    .terms-content {
+      font-size: 14px;
+      color: #555;
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      ol {
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+    }
+
+    .terms-checkbox {
+      margin-top: 15px;
+    }
+  }
+}
+
+/* Điều hướng các bước */
+.step-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+
+  button {
+    padding: 12px 25px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s;
+  }
+
+  .btn-outline-secondary {
+    color: #555;
+    border-color: #ccc;
+    background-color: transparent;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  .next-step {
+    background-color: #7c6a56;
+    border-color: #7c6a56;
+
+    &:hover {
+      background-color: #6a5a48;
+    }
+  }
+
+  .place-order {
+    background-color: #28a745;
+    border-color: #28a745;
+
+    &:hover:not(:disabled) {
+      background-color: #218838;
+    }
+
+    &:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+  }
+}
+
+/* Sidebar đơn hàng */
+.checkout-sidebar {
+  .order-summary {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    position: sticky;
+    width: 100%;
+    top: 20px;
+
+    h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      color: #333;
+    }
+  }
+
+  .cart-items {
+    max-height: 350px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 5px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 10px;
+    }
+  }
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .item-image {
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+        border: 1px solid #eee;
+      }
+    }
+
+    .item-details {
+      flex-grow: 1;
+      min-width: 0;
+
+      .item-name {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .item-quantity, .item-price {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 3px;
+      }
+    }
+
+    .item-total {
+      font-weight: 600;
+      font-size: 14px;
+      color: #333;
+      text-align: right;
+      min-width: 80px;
+    }
+  }
+
+  .coupon-section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+
+    .coupon-input {
+      display: flex;
+      gap: 10px;
+
+      input {
+        flex-grow: 1;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+
+        &:focus {
+          border-color: #7c6a56;
+          outline: none;
+        }
+      }
+
+      .btn-apply {
+        background-color: #7c6a56;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 0 15px;
+        font-weight: 500;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #6a5a48;
+        }
+      }
+    }
+  }
+
+  .order-totals {
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: #555;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .discount-row {
+      color: #e53935;
+    }
+
+    .shipping-row {
+      color: #4caf50;
+    }
+
+    .grand-total {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .checkout-container {
+    padding: 20px 15px 40px;
+  }
+
+  .checkout-steps {
+    .step-connector {
+      width: 40px;
+    }
+
+    .step-title {
+      font-size: 12px;
+    }
+  }
+
+  .checkout-content {
+    gap: 20px;
+  }
+
+  .checkout-main, .checkout-sidebar .order-summary {
+    padding: 20px 15px;
+  }
+
+  .payment-method {
+    .payment-option {
+      .payment-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+
+      .payment-label {
+        padding: 12px;
+      }
+    }
+
+    .bank-info, .ewallet-info {
+      flex-direction: column;
+      gap: 15px;
+
+      .bank-qr, .ewallet-qr {
+        align-self: center;
+      }
+    }
+  }
+
+  .step-navigation {
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+}

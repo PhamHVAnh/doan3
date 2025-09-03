@@ -1,0 +1,41 @@
+.ho-so-ne {
+  padding: 40px 0;
+
+  .container {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  }
+
+  h2 {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  .form-control {
+    border-radius: 10px;
+  }
+
+  button {
+    border-radius: 10px;
+  }
+
+  .hoa-don-card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+  }
+
+  .hoa-don-card p {
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,209 @@
+.sanpham-admin-modal {
+  .modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999999;
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .modal-body {
+      display: flex;
+      gap: 30px;
+    }
+
+    .left-image-preview {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+
+      .image-list-modal-popup {
+        position: absolute;
+        top: 265px;
+        left: 0px;
+        width: 170px;
+        max-height: 165px;
+        overflow-y: auto;
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        z-index: 1000;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .selectable-img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 2px solid transparent;
+        cursor: pointer;
+
+        &:hover {
+          border-color: #aaa;
+          transform: scale(1.05);
+        }
+
+        &.selected {
+          border-color: #7c6a56;
+        }
+      }
+      .selected-images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        max-height: 165px;
+        overflow-y: auto;
+        margin-top: 10px;
+        padding-right: 5px;
+
+        img {
+          width: 70px;
+          height: 70px;
+          object-fit: cover;
+          border-radius: 6px;
+          border: 2px solid transparent;
+          cursor: pointer;
+        }
+      }
+
+      .btn-chonAnh {
+        position: sticky;
+        top: 310px;
+        cursor: pointer;
+        z-index: 10;
+      }
+    }
+
+    .right-form {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+
+      .form-group {
+        margin-bottom: 15px;
+
+        input,
+        select {
+          width: 100%;
+          max-width: 300px;
+          padding: 10px;
+          font-size: 14px;
+          border-radius: 6px;
+          border: 1px solid #ccc;
+        }
+      }
+
+      .btn-save {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-weight: bold;
+        cursor: pointer;
+        align-self: flex-start;
+
+        &:hover {
+          background-color: #218838;
+        }
+      }
+    }
+  }
+}
+
+.tb-sanPham {
+  .product-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+}
+
+.search-container {
+  .input-group {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+
+    &:hover, &:focus-within {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-group-text {
+      border: 1px solid #dee2e6;
+      border-right: none;
+      padding: 0.5rem 1rem;
+      
+      i {
+        font-size: 1rem;
+        color: #6c757d;
+      }
+    }
+
+    .form-control {
+      border: 1px solid #dee2e6;
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
+      
+      &:focus {
+        box-shadow: none;
+        border-color: #dee2e6;
+      }
+
+      &::placeholder {
+        color: #adb5bd;
+      }
+    }
+
+    .btn-outline-secondary {
+      border: 1px solid #dee2e6;
+      border-left: none;
+      padding: 0.5rem 1rem;
+      
+      &:hover {
+        background-color: #f8f9fa;
+        color: #dc3545;
+      }
+
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+}
